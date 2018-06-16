@@ -18,21 +18,26 @@ public class BaseWebTest {
 	@BeforeTest
 	public void initializeDriver(String browserName) {
 		DOMConfigurator.configure("log4j.xml");
-		LOGGER.info("====================================");
 		LOGGER.info("===========Starting Test============");
 
 		LOGGER.info("Launching " + browserName + " browser");
+		String OS = System.getProperty("os.name").toLowerCase();
+		
 		if (browserName.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver",
-					System.getProperty("user.dir") + "/src/test/java/resources/chromedriver");
-			driver = new ChromeDriver();
-		}
+			if (OS.contains("mac")) {
+				System.setProperty("webdriver.chrome.driver",
+						System.getProperty("user.dir") + "/src/test/java/resources/chromedriver");
+			} else {
+				System.setProperty("webdriver.chrome.driver",
+						System.getProperty("user.dir") + "/src/test/java/resources/chromedriver.exe");
+			}
 
+		}
+		driver = new ChromeDriver();
 	}
 
 	@AfterTest
 	public void clean() {
-		LOGGER.info("==================================");
 		LOGGER.info("===========Ending Test============");
 		driver.quit();
 	}

@@ -21,4 +21,8 @@ public class WebHelper {
 		WebDriverWait wait = new WebDriverWait(driver, TestData.DEFAULT_TIMEOUT);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(element));
 	}
+	
+	public static void printLine() {
+		System.out.println("===================================================================");
+	}
 }

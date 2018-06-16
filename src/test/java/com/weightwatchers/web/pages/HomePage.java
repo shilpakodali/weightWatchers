@@ -54,6 +54,8 @@ public class HomePage {
 	 * @return
 	 */
 	public boolean verifyPageTitleMatchesTo(String titleText) {
+		LOGGER.info(String.format("Verify 'Landing' page title matches with %s", titleText));
+
 		String title = driver.getTitle();
 		if (title.equals(titleText)) {
 			return true;
