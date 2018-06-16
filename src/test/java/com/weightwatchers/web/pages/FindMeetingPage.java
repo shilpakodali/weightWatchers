@@ -8,6 +8,11 @@ import org.openqa.selenium.WebElement;
 import com.weightwatchers.web.testdata.TestData;
 import com.weightwatchers.web.util.WebHelper;
 
+/**
+ * 
+ * @author shilpakodali
+ *
+ */
 public class FindMeetingPage {
 
 	private WebDriver driver;
@@ -18,6 +23,7 @@ public class FindMeetingPage {
 		WebHelper.waitUntilVisible(driver, zipCodeSearch);
 	}
 
+	// Elements
 	private By zipCodeSearch = By.cssSelector("#meetingSearch");
 
 	private By searchButton = By.cssSelector(".btn.btn-default.form-blue-pill__btn");
@@ -26,6 +32,7 @@ public class FindMeetingPage {
 
 	private By firstSearchResultsDistance = By.cssSelector(".location__distance");
 
+	// Getters
 	public WebElement getZipCodeSearch() {
 		return driver.findElement(zipCodeSearch);
 	}

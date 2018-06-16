@@ -17,17 +17,17 @@ public class HomePage {
 	public static final Logger LOGGER = Logger.getLogger(HomePage.class.getName());
 	private WebDriver driver;
 
+	// Elements
 	private By findAMeeting = By.cssSelector(".find-a-meeting");
 	private By login = By.cssSelector("#ela-nav_profile_login");
 
-	// Constructor
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
 		WebHelper.waitUntilVisible(driver, findAMeeting);
 
 	}
 
-	// Elements
+	// Getters
 	public WebElement getFindAMeeting() {
 		return driver.findElement(findAMeeting);
 	}

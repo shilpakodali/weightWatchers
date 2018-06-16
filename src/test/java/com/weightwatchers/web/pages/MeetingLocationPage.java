@@ -7,6 +7,11 @@ import org.openqa.selenium.WebElement;
 
 import com.weightwatchers.web.util.WebHelper;
 
+/**
+ * 
+ * @author shilpakodali
+ *
+ */
 public class MeetingLocationPage {
 
 	private WebDriver driver;
@@ -17,12 +22,14 @@ public class MeetingLocationPage {
 		WebHelper.waitUntilVisible(driver, joinMeeting);
 	}
 
+	// Elements
 	private By locationTitle = By.cssSelector(".location__name>span");
 	private By joinMeeting = By.cssSelector(".btn.meeting-information__link.spice-translated");
 	private By currentDay = By.cssSelector(".hours-list-item-wrapper.hours-list--currentday > .hours-list-item-day");
 	private By currentDayHours = By
 			.cssSelector(".hours-list-item-wrapper.hours-list--currentday > .hours-list-item-hours >div");
 
+	// Getters
 	public WebElement getJoinMeetingButton() {
 		return driver.findElement(joinMeeting);
 	}
@@ -39,6 +46,7 @@ public class MeetingLocationPage {
 		return driver.findElement(currentDayHours);
 	}
 
+	// Functions
 	public boolean verifyLocationTitleMatches(String titleText) {
 		LOGGER.info(String.format("Verify Location title matches with %s", titleText));
 		String title = this.getLocationTitle().getText();

@@ -8,6 +8,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.weightwatchers.web.testdata.TestData;
 
+/**
+ * 
+ * @author shilpakodali
+ *
+ */
 public class WebHelper {
 	public static final Logger LOGGER = Logger.getLogger(WebHelper.class.getName());
 
@@ -22,6 +27,9 @@ public class WebHelper {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(element));
 	}
 	
+	/**
+	 * Prints Line
+	 */
 	public static void printLine() {
 		System.out.println("===================================================================");
 	}
