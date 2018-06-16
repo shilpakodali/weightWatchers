@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Weightwatchers Test Suite" verbose="1"
+	parallel="tests" thread-count="1">
+
+	<test name="Hours Of Operation" preserve-order="true">
+		<parameter name="browserName" value="chrome"></parameter>
+		<packages>
+			<package name="com.weightwatchers.web.test" />
+		</packages>
+	</test>
+</suite>

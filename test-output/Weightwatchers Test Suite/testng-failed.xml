@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" parallel="tests" name="Failed suite [Weightwatchers Test Suite]" guice-stage="DEVELOPMENT" verbose="10">
+  <test thread-count="1" parallel="tests" name="Hours Of Operation(failed)" verbose="10">
+    <parameter name="browserName" value="chrome"/>
+    <classes>
+      <class name="com.weightwatchers.web.test.HoursOfOperationTest">
+        <methods>
+          <include name="hoursOfOperation"/>
+          <include name="clean"/>
+          <include name="initializeDriver"/>
+        </methods>
+      </class> <!-- com.weightwatchers.web.test.HoursOfOperationTest -->
+    </classes>
+  </test> <!-- Hours Of Operation(failed) -->
+</suite> <!-- Failed suite [Weightwatchers Test Suite] -->
