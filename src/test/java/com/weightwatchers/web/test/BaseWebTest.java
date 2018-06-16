@@ -21,12 +21,11 @@ public class BaseWebTest {
 		LOGGER.info("====================================");
 		LOGGER.info("===========Starting Test============");
 
-		switch (browserName) {
-		case "chrome":
+		LOGGER.info("Launching " + browserName + " browser");
+		if (browserName.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver",
 					System.getProperty("user.dir") + "/src/test/java/resources/chromedriver");
 			driver = new ChromeDriver();
-			break;
 		}
 
 	}
@@ -35,6 +34,7 @@ public class BaseWebTest {
 	public void clean() {
 		LOGGER.info("==================================");
 		LOGGER.info("===========Ending Test============");
+		driver.quit();
 	}
 
 }
