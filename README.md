@@ -1,10 +1,9 @@
-# weightWatchers
-Test Assessment
+# Weightatchers Test Assessment
 
 
-# install Java
-# install Maven
+Steps to run the code.
 
-# goto project directory and type 'mvn clean install' to run
-
-#to see the logs goto ${project directory}/logfile.log
+1. install Java
+2. install Maven
+3. goto project directory and type 'mvn clean install' to run
+4. To see the logs goto ${project directory}/logfile.log
