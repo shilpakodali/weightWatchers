@@ -8,6 +8,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
+/**
+ * 
+ * @author shilpakodali
+ *
+ */
 
 public class BaseWebTest {
 
@@ -18,23 +23,28 @@ public class BaseWebTest {
 	@BeforeTest
 	public void initializeDriver(String browserName) {
 		DOMConfigurator.configure("log4j.xml");
-		LOGGER.info("====================================");
 		LOGGER.info("===========Starting Test============");
 
-		switch (browserName) {
-		case "chrome":
-			System.setProperty("webdriver.chrome.driver",
-					System.getProperty("user.dir") + "/src/test/java/resources/chromedriver");
-			driver = new ChromeDriver();
-			break;
-		}
+		LOGGER.info("Launching " + browserName + " browser");
+		String OS = System.getProperty("os.name").toLowerCase();
+		
+		if (browserName.equals("chrome")) {
+			if (OS.contains("mac")) {
+				System.setProperty("webdriver.chrome.driver",
+						System.getProperty("user.dir") + "/src/test/java/resources/chromedriver");
+			} else {
+				System.setProperty("webdriver.chrome.driver",
+						System.getProperty("user.dir") + "src/test/java/resources/chromedriver.exe");
+			}
 
+		}
+		driver = new ChromeDriver();
 	}
 
 	@AfterTest
 	public void clean() {
-		LOGGER.info("==================================");
 		LOGGER.info("===========Ending Test============");
+		driver.quit();
 	}
 
 }
