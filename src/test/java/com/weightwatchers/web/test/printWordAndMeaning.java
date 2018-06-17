@@ -25,7 +25,7 @@ public class printWordAndMeaning {
 
 	public static final Logger LOGGER = Logger.getLogger(printWordAndMeaning.class.getName());
 	private HashMap<String, List<String>> dataDictionary = new HashMap<String, List<String>>();
-	String path = "src/test/java/resources/data-d";
+	String path = "src/test/java/resources/data-dictionary.txt";
 	String currentLine;
 	String[] data = null;
 
@@ -34,9 +34,9 @@ public class printWordAndMeaning {
 
 		LOGGER.info("Test: Contents of a file");
 		try {
-			// assertTrue(doesFileExist(path), String.format("File not present at %s",
-			// path));
-			doesFileExist(path);
+			if (doesFileExist(path)) {
+				Helper.printBold(String.format("File exists at %s", path));
+			}
 			LOGGER.info("Read file data");
 			BufferedReader reader = new BufferedReader(new FileReader(new File(path)));
 			while ((currentLine = reader.readLine()) != null) {
