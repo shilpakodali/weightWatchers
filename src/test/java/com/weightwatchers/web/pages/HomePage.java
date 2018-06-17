@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import com.weightwatchers.web.util.WebHelper;
+import com.weightwatchers.web.util.Helper;
 
 /**
  * 
@@ -17,17 +17,17 @@ public class HomePage {
 	public static final Logger LOGGER = Logger.getLogger(HomePage.class.getName());
 	private WebDriver driver;
 
+	// Elements
 	private By findAMeeting = By.cssSelector(".find-a-meeting");
 	private By login = By.cssSelector("#ela-nav_profile_login");
 
-	// Constructor
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
-		WebHelper.waitUntilVisible(driver, findAMeeting);
+		Helper.waitUntilVisible(driver, findAMeeting);
 
 	}
 
-	// Elements
+	// Getters
 	public WebElement getFindAMeeting() {
 		return driver.findElement(findAMeeting);
 	}
@@ -54,6 +54,8 @@ public class HomePage {
 	 * @return
 	 */
 	public boolean verifyPageTitleMatchesTo(String titleText) {
+		LOGGER.info(String.format("Verify 'Landing' page title matches with %s", titleText));
+
 		String title = driver.getTitle();
 		if (title.equals(titleText)) {
 			return true;
