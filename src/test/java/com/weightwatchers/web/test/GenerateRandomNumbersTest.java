@@ -26,7 +26,7 @@ public class GenerateRandomNumbersTest {
 	@Test()
 	public void generateRandomNumbersAndPrintSmallNumber() {
 		Helper.printLine();
-		LOGGER.info("Test : Generate Random Numbers");
+		LOGGER.info("Test: Generate Random Numbers");
 		Random random = new Random();
 		LOGGER.info("Generating 500 random numbers");
 		for (int i = 0; i <= 500; i++) {

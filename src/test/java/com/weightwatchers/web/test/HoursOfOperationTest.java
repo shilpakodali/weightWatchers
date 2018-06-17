@@ -18,7 +18,7 @@ public class HoursOfOperationTest extends BaseWebTest {
 
 	@Test()
 	public void hoursOfOperation() {
-		LOGGER.info("Test : Hours Of Operation");
+		LOGGER.info("Test: Hours Of Operation");
 		LOGGER.info("Navigate to " + TestData.URL);
 		driver.get(TestData.URL);
 		HomePage homePage = new HomePage(driver);
