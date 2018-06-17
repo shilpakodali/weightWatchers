@@ -13,11 +13,12 @@ import com.weightwatchers.web.testdata.TestData;
  * @author shilpakodali
  *
  */
-public class WebHelper {
-	public static final Logger LOGGER = Logger.getLogger(WebHelper.class.getName());
+public class Helper {
+	public static final Logger LOGGER = Logger.getLogger(Helper.class.getName());
 
 	/**
 	 * Wait until element is visible
+	 * 
 	 * @param driver
 	 * @param element
 	 */
@@ -26,11 +27,20 @@ public class WebHelper {
 		WebDriverWait wait = new WebDriverWait(driver, TestData.DEFAULT_TIMEOUT);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(element));
 	}
-	
+
 	/**
 	 * Prints Line
 	 */
 	public static void printLine() {
 		System.out.println("===================================================================");
+	}
+
+	/**
+	 * Prints text in BOLD on console
+	 * 
+	 * @param text
+	 */
+	public static void printBold(String text) {
+		System.out.println("\033[1m" + text + "\033[0m");
 	}
 }

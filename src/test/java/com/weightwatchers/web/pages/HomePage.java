@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import com.weightwatchers.web.util.WebHelper;
+import com.weightwatchers.web.util.Helper;
 
 /**
  * 
@@ -23,7 +23,7 @@ public class HomePage {
 
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
-		WebHelper.waitUntilVisible(driver, findAMeeting);
+		Helper.waitUntilVisible(driver, findAMeeting);
 
 	}
 

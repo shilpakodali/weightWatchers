@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import com.weightwatchers.web.testdata.TestData;
-import com.weightwatchers.web.util.WebHelper;
+import com.weightwatchers.web.util.Helper;
 
 /**
  * 
@@ -20,7 +20,7 @@ public class FindMeetingPage {
 
 	public FindMeetingPage(WebDriver driver) {
 		this.driver = driver;
-		WebHelper.waitUntilVisible(driver, zipCodeSearch);
+		Helper.waitUntilVisible(driver, zipCodeSearch);
 	}
 
 	// Elements
@@ -68,19 +68,19 @@ public class FindMeetingPage {
 	}
 
 	public void printFirstSearchResult() {
-		WebHelper.waitUntilVisible(driver, firstSearchResultsTitle);
+		Helper.waitUntilVisible(driver, firstSearchResultsTitle);
 		String title = this.getFirstSearchResultsTitle().getText();
 		String distance = this.getFirstSearchResultsDistance().getText();
-		WebHelper.printLine();
+		Helper.printLine();
 		LOGGER.info("Printing first search results on to console");
-		System.out.println("First Search Result Title: " + title);
-		System.out.println("First Search Result Distance: " + distance);
-		WebHelper.printLine();
+		Helper.printBold("First Search Result Title: " + title);
+		Helper.printBold("First Search Result Distance: " + distance);
+		Helper.printLine();
 	}
 
 	public String getSearchResultTitleText() {
 		LOGGER.info("Get text of search result title");
-		WebHelper.waitUntilVisible(driver, firstSearchResultsTitle);
+		Helper.waitUntilVisible(driver, firstSearchResultsTitle);
 		return this.getFirstSearchResultsTitle().getText();
 	}
 

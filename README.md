@@ -1,4 +1,4 @@
-# Weightatchers Test Assessment
+# Weightwatchers Test Assessment
 
 
 Steps to run the code.

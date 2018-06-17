@@ -34,7 +34,7 @@ public class BaseWebTest {
 						System.getProperty("user.dir") + "/src/test/java/resources/chromedriver");
 			} else {
 				System.setProperty("webdriver.chrome.driver",
-						System.getProperty("user.dir") + "/src/test/java/resources/chromedriver.exe");
+						System.getProperty("user.dir") + "src/test/java/resources/chromedriver.exe");
 			}
 
 		}

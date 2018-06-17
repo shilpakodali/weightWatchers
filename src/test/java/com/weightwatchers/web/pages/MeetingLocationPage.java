@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import com.weightwatchers.web.util.WebHelper;
+import com.weightwatchers.web.util.Helper;
 
 /**
  * 
@@ -19,7 +19,7 @@ public class MeetingLocationPage {
 
 	public MeetingLocationPage(WebDriver driver) {
 		this.driver = driver;
-		WebHelper.waitUntilVisible(driver, joinMeeting);
+		Helper.waitUntilVisible(driver, joinMeeting);
 	}
 
 	// Elements
@@ -58,10 +58,10 @@ public class MeetingLocationPage {
 	}
 
 	public void printCurrentDayAndHours() {
-		WebHelper.printLine();
+		Helper.printLine();
 		LOGGER.info("Printing Current Day and Working Hours");
-		System.out.println("Current Day: " + this.getCurrentDay().getText());
-		System.out.println("Current Day Working Hours: " + this.getCurrentDayHours().getText());
-		WebHelper.printLine();
+		Helper.printBold("Current Day: " + this.getCurrentDay().getText());
+		Helper.printBold("Current Day Working Hours: " + this.getCurrentDayHours().getText());
+		Helper.printLine();
 	}
 }
